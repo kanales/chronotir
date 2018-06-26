@@ -1,0 +1,22 @@
+{
+  "name": "chronotir",
+  "version": "1.0.0",
+  "description": "Controlador para tiradas de tiro con arco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanales/chronotir.git"
+  },
+  "author": "kanales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanales/chronotir/issues"
+  },
+  "homepage": "https://github.com/kanales/chronotir#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
