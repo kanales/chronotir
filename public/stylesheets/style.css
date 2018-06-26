@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+
+.clock-title {
+    font-size: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.clock-reset {
+    color: white;
+    display: inline-block;
+    background: red;
+    padding: 0.25em;
+    border-radius: 5%;
+}
+
+.clock-time {
+    font-size: 20vw;
+    text-align: center;
+}
+
+.clock-controls {
+    font-size: 5vw;
+    display: flex;
+    justify-content: space-between;
+}  
