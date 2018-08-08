@@ -1,8 +1,14 @@
-class Clock {
-    constructor(mins, secs) {
+export class Clock {
+    secs: number
+    mins: number
+    cbs: (() => void)[]
+    paused: boolean
+
+    constructor(mins: number, secs: number) {
         this.secs  = secs
         this.mins = mins
         this.cbs   = []
+        this.paused = false
     }
 
     decrTime() {
@@ -15,11 +21,11 @@ class Clock {
     }
 
     update() {
-        console.log("Second passed!")
+        if (this.paused) return
         if (this.secs > 0 || this.mins > 0) this.decrTime()
     }
 
-    static sliceTime(t) {
+    static sliceTime(t: number) {
         return ("0" + t).substr(-2)
     }
 
@@ -27,7 +33,7 @@ class Clock {
         return `${Clock.sliceTime(this.mins)}:${Clock.sliceTime(this.secs)}`
     }
 
-    setOnCountdownEnds(cb) {
+    setOnCountdownEnds(cb: () => void) {
         this.cbs.push(cb)
     }
 
@@ -36,29 +42,3 @@ class Clock {
         this.cbs = [] // free the list of cbs
     }
 }
-
-function init() {
-    c = new Clock(1,10)
-    window.setInterval(() => {
-        c.update()
-        $("#clock").text(c.clockRepr())
-    },1000)
-}
-
-function next() {
-
-}
-
-function back() {
-
-}
-
-function pause() {
-    
-}
-
-$(() => {
-    
-})
-
-

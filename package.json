@@ -4,7 +4,11 @@
   "description": "Controlador para tiradas de tiro con arco",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "uglify": "mkdir -p public/js/ && rm -rf public/js/* && npx uglifyjs build/bundle.js --compress > public/js/main.js",
+    "typescript": "mkdir -p build/js && rm -rf build/js/* && tsc -p ts/",
+    "bundle": "npx rollup build/js/main.js --format iife --name 'chronotir' --file build/bundle.js",
+    "build": "npm run typescript && npm run bundle && npm run uglify"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,11 @@
   "homepage": "https://github.com/kanales/chronotir#readme",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.5",
+    "rollup": "^0.64.1",
+    "typescript": "^3.0.1",
+    "uglify-es": "^3.3.9"
   }
 }

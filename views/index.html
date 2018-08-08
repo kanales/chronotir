@@ -7,23 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Top bar -->
+    <div id="setup" class="container">
+        <h1>Crea un cronotir</h1>
+        <div class="btn-group">
+            <button class="selected" style="width: 50%;">Aire Libre</button>
+            <button style="width: 50%;">Interior</button>
+        </div>
+    </div>
+
+    <!-- Top bar -->
+    <div id="crono" class="container">
         <div class="clock-title">
-            <div>Aire Libre</div>
-            <div class="clock-reset">RESET</div>
-        </div>
-    
-        <div id="clock" class="clock-time">
-        </div>
-        <div class="clock-controls">
-            <a>back</a>
-            <a>play</a>
-            <a>next</a>
-        </div>
+                <div>Aire Libre</div>
+                <div class="clock-reset">RESET</div>
+            </div>
+        
+            <div id="clock" class="clock-time">
+            </div>
+            <div class="clock-controls">
+                <a id="back">back</a>
+                <a id="play">play</a>
+                <a id="next">next</a>
+            </div>
+    </div>
+
+    <div id="test" class="container">
+        <audio controls preload="auto"> 
+            <source src="sound/beep.ogg" />
+        </audio>
     </div>
 </body>
 </html>
