@@ -1,7 +1,9 @@
 import {Clock} from "./Clock"
+import { exists } from "fs";
 
 export interface AppState {
     run(): void
+    exit(): void
 }
 
 export class ClockState implements AppState {
@@ -10,6 +12,9 @@ export class ClockState implements AppState {
     constructor(clock: Clock) {
         this.clock = clock
     }
+    private do() {
+
+    } 
 
     run() {
         console.log("Starting...")
@@ -26,25 +31,25 @@ export class ClockState implements AppState {
             $("#clock").text(c.clockRepr())
         },1000)
     
+        // todo
         $("#back").addClass("disabled")
         $("#next").addClass("disabled")
     
         $("#play").click(e => {
-            if (c.paused) {
-                c.paused = false
-                // resume
-            } else {
-                c.paused = true
-                // pause
-            }
+            c.paused = !c.paused
         })
-        
     }
 
+    exit() {
+        $("#crono").hide()
+    }
 }
 
 export class SetupState implements AppState {
-    run() {
-        throw new Error("Method not implemented.");
+    exit(): void {
+        $("#setup").hide()
+    }
+    run(): void {
+        $("#setup").show()
     }
 }
